@@ -17,7 +17,7 @@ import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4b
 ```
 
 2. Sublime Text를 재시작한 후 Ctrl+Shift+P 를 누르면 명령어를 입력할 수 있는 창이 나오는데 Install Package 로 검색하면 Package Controller를 실행 가능하다.
-![package](image/package.jpg)
+![](https://raw.githubusercontent.com/newyork-tribe/study-node.js/master/tutorial/setup/image/package.png)
 
 **NodeJs Plugin 설치**
 
@@ -92,4 +92,4 @@ Preferences &gt; Key Bindings - User 에 아래의 내용을 붙혀넣고 저장
 { "keys": ["shift+super+x"], "command": "upper_case" }
 ]
 ```
-![key binding](image/key.png)
+![](https://raw.githubusercontent.com/newyork-tribe/study-node.js/master/tutorial/setup/image/key.png)
