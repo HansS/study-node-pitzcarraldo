@@ -10,18 +10,25 @@
 
 Sublime의 다양한 플러그인들을 간편하게 설치할 수 있는 추가 기능.
 
-1. Ctrl + ` &gt; Console 창이 나오면 아래 명령어를 복사해서 붙혀놓고 실행한다.
+* Ctrl + ` &gt; Console 창이 나오면 아래 명령어를 복사해서 붙혀놓고 실행한다.
 
 ```javascript
 import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')
 ```
 
-2. Sublime Text를 재시작한 후 Ctrl+Shift+P 를 누르면 명령어를 입력할 수 있는 창이 나오는데 Install Package 로 검색하면 Package Controller를 실행 가능하다.
+* Sublime Text를 재시작한 후 Ctrl+Shift+P 를 누르면 명령어를 입력할 수 있는 창이 나오는데 Install Package 로 검색하면 Package Controller를 실행 가능하다.
 ![](https://raw.githubusercontent.com/newyork-tribe/study-node.js/master/tutorial/setup/image/package.png)
 
 **NodeJs Plugin 설치**
 
 * Package Controller 에서 NodeJs를 검색하면 나오는 플러그인을 설치한다.
+* Preferences - Browse Packages 을 실행 Nodejs 폴더를 찾아서 Nodejs.sublime-build 파일에 다음 코드를 추가
+
+```
+"path": "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin: No such file or directory"
+```
+
+![](http://cfile7.uf.tistory.com/image/1160494B4F3A62A226D74D)
 
 **Eclipse와 KeyMapping 동일하게 설정하기**
 
