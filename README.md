@@ -56,4 +56,4 @@ http://book.naver.com/bookdb/book_detail.nhn?bid=7158771
  * 회사에서 사주면 좋겠다.
 
 ### 시간
-매주 수요일 점심
+매주 수요일 12:00~13:30
