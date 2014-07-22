@@ -27,16 +27,9 @@ import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330
 * Sublime Text를 재시작한 후 Ctrl+Shift+P 를 누르면 명령어를 입력할 수 있는 창이 나오는데 Install Package 로 검색하면 Package Controller를 실행 가능하다.
 ![](https://raw.githubusercontent.com/newyork-tribe/study-node.js/master/tutorial/setup/image/package.png)
 
-**NodeJs Plugin 설치**
+**SublimeCodeIntel 설치**
 
-* Package Controller 에서 NodeJs를 검색하면 나오는 플러그인을 설치한다.
-* Preferences - Browse Packages 을 실행 Nodejs 폴더를 찾아서 Nodejs.sublime-build 파일에 다음 코드를 추가
-
-```
-"path": "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin: No such file or directory"
-```
-
-![](http://cfile7.uf.tistory.com/image/1160494B4F3A62A226D74D)
+* Package Controller 에서 SublimeCodeIntel를 검색하면 나오는 플러그인을 설치한다.
 
 **Eclipse와 KeyMapping 동일하게 설정하기**
 
