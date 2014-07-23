@@ -1,0 +1,7 @@
+{
+	"name": "class2",
+	"version": "0.0.1",
+	"dependencies" : {
+		"request" : "2.38.0"
+	}
+}
