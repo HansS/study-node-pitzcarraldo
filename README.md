@@ -48,6 +48,9 @@ http://book.naver.com/bookdb/book_detail.nhn?bid=7158771
 * [Node.js](http://nodejs.org/)
  * 미리 설치 해오기
  * 터미널에 node, npm이 제대로 동작하는지 확인 해보기
+
+* [Intellij Idea 13](http://www.jetbrains.com/idea/download/)
+ * WebStorm 대신 사용 가능
 * [WebStorm](http://www.jetbrains.com/webstorm/)
  * ItelliJ 계열의 Javascript IDE.
  * 현존하는 IDE중 Node.js 지원이 가장 뛰어남.
