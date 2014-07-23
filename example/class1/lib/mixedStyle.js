@@ -2,14 +2,12 @@ var object = {
 	"firstName" : "따봉",
 	"lastName" : "박",
 	"getFullName" : function() {
-		var that = object; 
-		return that.firstName + that.lastName;
+		return this.firstName + this.lastName;
 	} 
 }
 
 object.getFullNameWithTitle = function(title) {
-	var that = object; 
-	return title + that.firstName + that.lastName;
+	return title + this.firstName + this.lastName;
 }
 
 module.exports = object;
