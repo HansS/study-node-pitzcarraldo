@@ -8,6 +8,9 @@
 
 * [ObjectStyle](lib/objectStyle.js)
  * Json Object 형태로 한번에 묶어서 모듈 만들기
+ * var that = module.exports 로 내부 요소에 접근한 부분에 주목
+  * Javascript에서 this는 이상하게 동작합니다. <- 언어 설계의 미스
+  * [this의 동작 원리](http://bonsaiden.github.io/JavaScript-Garden/ko/#function.this)
 * [SeperatedStyle](lib/seperatedStyle.js)
  * module.exports.name 형태로 모듈에 직접 변수/함수 설정하기
 * [MixedStyle](lib/mixedStyle.js)
