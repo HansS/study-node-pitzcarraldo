@@ -20,4 +20,7 @@
 * [routes/users.js](routes/users.js)
  * req, res의 다양한 기능을 확인해볼 수 있는 예제
 
-[Express 4.x API](http://expressjs.kr/4x/api.html) 문서를 참고하여 req,res의 다양한 기능을 테스트해보기.
+# 실습 방법
+* app.js의 주석을 참고하여 다양한 미들웨어를 설정 해보기.
+* 미들웨어가 설정된 순서대로 동작하는지 확인해보기.
+* [Express 4.x API](http://expressjs.kr/4x/api.html) 문서를 참고하여 req,res의 다양한 기능을 테스트해보기.
