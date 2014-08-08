@@ -17,7 +17,7 @@
  * view : View Template 파일들(mustache)
 * [routes](routes)
  * 각 URL별 액션이 정의 된 모듈 (like Controller)
-* [routes](routes/users.js)
+* [routes/users.js](routes/users.js)
  * req, res의 다양한 기능을 확인해볼 수 있는 예제
 
 [Express 4.x API](http://expressjs.kr/4x/api.html)문서를 참고하여 req,res의 다양한 기능을 테스트해보기.
