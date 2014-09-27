@@ -41,6 +41,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
 //Routing
 //Express에 즉시 RequestMapping 선언
 app.get('/', function(req, res) {
@@ -58,6 +59,32 @@ app.use('/note', note);
 //app.use('/note/write', note.write);
 //app.use('/note/modify', note.modify);
 //app.use('/note/del', note.del);
+
+var passport = require('passport');
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.post('/login', passport.authenticate('local', { successRedirect: '/note',
+    failureRedirect: '/login' }));
+
+var  LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+        User.save({username : username, password:password});
+        User.findOne({ username: username }, function (err, user) {
+            if (err) { return done(err); }
+            if (!user) {
+                return done(null, false, { message: 'Incorrect username.' });
+            }
+            if (!user.validPassword(password)) {
+                return done(null, false, { message: 'Incorrect password.' });
+            }
+            return done(null, user);
+        });
+    }
+));
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

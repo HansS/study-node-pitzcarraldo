@@ -89,6 +89,14 @@
                 write($("#write textarea").val());
             });
 
+            $("#join_button").click(function(evt) {
+                console.log('join!!');
+            });
+
+            $("#login_button").click(function(evt) {
+                console.log('login!!');
+            });
+
             load();
         });
     </script>
@@ -96,6 +104,19 @@
   <body>
     <div id='main'>
         <div id='title'>Online Memo Example</div>
+        <form action="/login" method="post">
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username"/>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password"/>
+            </div>
+            <div>
+                <input type="submit" value="Log In"/>
+            </div>
+        </form>
         <div id='write'>
             <div class='left'>
                 <input id='author' class='author' type='text' value='TestUser' />
@@ -103,6 +124,8 @@
             <div class='right'>
                 <textarea></textarea>
                 <br />
+                <input id='join_button' type='button' value='JOIN' />
+                <input id='login_button' type='button' value='LOGIN' />
                 <input id='write_button' type='button' value='WRITE' />
             </div>
         </div>
