@@ -104,7 +104,20 @@
   <body>
     <div id='main'>
         <div id='title'>Online Memo Example</div>
-        <form action="/login" method="post">
+        <form action="/note/join" method="post">
+                    <div>
+                        <label>Username:</label>
+                        <input type="text" name="username"/>
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" name="password"/>
+                    </div>
+                    <div>
+                        <input type="submit" value="Join"/>
+                    </div>
+                </form>
+        <form action="/note/login" method="post">
             <div>
                 <label>Username:</label>
                 <input type="text" name="username"/>

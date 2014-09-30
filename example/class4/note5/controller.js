@@ -3,6 +3,8 @@ var router = express.Router();
 
 var dao = require('./dao');
 
+var users = require('./user');
+
 
 router.get('/', function(req, res) {
     res.render('note/note', {title : 'exercise mysql'});
@@ -52,6 +54,36 @@ router.post('/modify', function(req, res) {
     dao.modifyNote(_id, contents, ip_addr, function(result){
         res.json({status:"SUCCESS",msg:result});
     });
+});
+
+var passport = require('passport');
+
+router.post('/login', passport.authenticate('local', { successRedirect: '/note',
+    failureRedirect: '/note' }));
+
+var  LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+
+        var user = users.getUser(username);
+            if (!user) {
+                return done(null, false, { message: 'Incorrect username.' });
+            }
+            if (user.password != password) {
+                return done(null, false, { message: 'Incorrect password.'});
+            }
+            return done(null, user);
+    }
+));
+
+
+router.post('/join', function(req, res) {
+    var user = users.getUser(req.body.username);
+    if (user) {
+        alert('Already joined!');
+    }
+    users.registerUser(req.body.username, req.body.password);
 });
 
 module.exports = router;
