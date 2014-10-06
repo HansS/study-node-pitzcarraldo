@@ -15,6 +15,7 @@ router.get('/', function(req, res) {
  */
 router.get('/load', function(req, res) {
 
+    console.log(req.user);
     dao.getNoteList(function(rows){
         res.json(rows);
     });
@@ -76,6 +77,24 @@ passport.use(new LocalStrategy(
             return done(null, user);
     }
 ));
+
+passport.serializeUser(function(user, done) {
+    console.log('serializing user of ' + user);
+    done(null, user.id);
+});
+
+
+passport.deserializeUser(function(id, done) {
+
+    console.log('deserializing user of ' + id);
+    var user = users.getUser(id);
+    if (user) {
+        return done(null, user);
+    } else {
+        return done(null, false);
+    }
+
+});
 
 
 router.post('/join', function(req, res) {

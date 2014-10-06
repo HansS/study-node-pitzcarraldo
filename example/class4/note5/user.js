@@ -17,7 +17,7 @@ exports.getUser = function(userId, _callback) {
 
 
     return pool.getConnection(function(err,connection){
-        return connection.query('SELECT * FROM users WHERE userId = ?', {userId : userId}, function(err, rows){
+        return connection.query('SELECT * FROM users WHERE userId = ?',  userId, function(err, rows){
             console.log(rows);
 
             //release connection!
@@ -51,6 +51,11 @@ exports.registerUser = function(userId, password, _callback) {
                         throw err;
                     });
                 }
+                console.log(result);
+                connection.commit(function(err){
+                    console.log('test');
+                   // connection.release();
+                });
             });
         });
     });
